@@ -12,6 +12,12 @@ class App extends Component {
     }
   }
 
+  handleNewBook() {
+    this.setState({
+      inputNewBook: true
+    })
+  }
+
   handleCancel = () => {
     this.setState({
       inputNewBook: false
@@ -71,6 +77,7 @@ class App extends Component {
         :
         (
           <div id="main-container">
+            <p><button onClick={() => this.handleNewBook()}>Add a new book to your list</button></p>
             {ShowBooks()}
           </div>
         )
