@@ -35,3 +35,9 @@
 .form-button {
   margin: 10px;
 }
+
+#main-container {
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+}
