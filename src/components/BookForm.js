@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import Select from "react-select"
 
-class AddBookForm extends Component {
+class BookForm extends Component {
   constructor(props) {
     super(props)
 
