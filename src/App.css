@@ -6,6 +6,16 @@
   margin-top: 2rem;
 }
 
+.row {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row > div[class*='col-'] {
+  display: flex;
+}
+
 .card {
   width: 100%;
 }
