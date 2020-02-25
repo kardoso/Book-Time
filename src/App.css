@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.App .container {
+  margin-top: 2rem;
+}
+
+.card {
+  width: 100%;
+}
+
+.card-header{
+  text-transform: uppercase;
+}
