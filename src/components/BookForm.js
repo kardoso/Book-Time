@@ -27,7 +27,8 @@ class BookForm extends Component {
   render() {
     var tagOptions = [
       { value: 'read', label: 'Read' },
-      { value: 'want to read', label: 'Want to read' }
+      { value: 'want to read', label: 'Want to read' },
+      { value: 'not interested', label: 'Not interested' }
     ]
     var ratingOptions = [
       { value: '1 star', label: '1 star' },
