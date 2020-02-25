@@ -18,6 +18,11 @@ class App extends Component {
     })
   }
 
+  handleClearList() {
+    localStorage.removeItem('books')
+    window.location.reload(false)
+  }
+
   handleCancel = () => {
     this.setState({
       inputNewBook: false
@@ -78,6 +83,7 @@ class App extends Component {
         (
           <div id="main-container">
             <p><button onClick={() => this.handleNewBook()}>Add a new book to your list</button></p>
+            <p><button onClick={() => this.handleClearList()}>Clear list</button></p>
             {ShowBooks()}
           </div>
         )
