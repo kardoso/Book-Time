@@ -23,3 +23,21 @@
 .card-header{
   text-transform: uppercase;
 }
+
+.form-group {
+  padding: 1rem;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-button {
+  margin: 10px;
+}
+
+#main-container {
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+}
