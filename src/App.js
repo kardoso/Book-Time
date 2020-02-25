@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css'
 import Book from './components/Book'
 import BookForm from './components/BookForm'
 
