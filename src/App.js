@@ -1,14 +1,60 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import Book from './components/Book'
+import BookForm from './components/BookForm'
 
 class App extends Component {
   constructor() {
     super()
 
     this.state = {
-
+      inputNewBook: false
     }
+  }
+
+  handleCancel = () => {
+    this.setState({
+      inputNewBook: false
+    })
+  }
+
+  handleSubmit = (event) =>{
+    event.preventDefault()
+    const data = new FormData(document.getElementById("book-form"))
+    var books = JSON.parse(localStorage.getItem('books'))
+    if(data.get("title") === ""){
+      alert("Fill the title field")
+      return false
+    }
+    if(data.get("author") === ""){
+      alert("Fill the author field")
+      return false
+    }
+    if(data.get("tag") === ""){
+      alert("Fill your current situation")
+      return false
+    }
+    if (books != null){
+      books.push({
+        "title" : data.get("title"),
+        "author" : data.get("author"),
+        "tag" : data.get("tag"),
+        "rating" : data.get("rating")
+      })
+    }
+    else{
+      books = [{
+        "title" : data.get("title"),
+        "author" : data.get("author"),
+        "tag" : data.get("tag"),
+        "rating" : data.get("rating")
+      }]
+    }
+
+    localStorage.setItem("books", JSON.stringify(books))
+    this.setState({
+      inputNewBook: false
+    })
   }
 
   render() {
@@ -16,10 +62,21 @@ class App extends Component {
   return (
     <div className="App">
       {
-        ShowBooks()
+        this.state.inputNewBook ?
+        (
+          <div id="main-container">
+            <BookForm handleSubmit={this.handleSubmit} handleCancel={this.handleCancel}/>
+          </div>
+        )
+        :
+        (
+          <div id="main-container">
+            {ShowBooks()}
+          </div>
+        )
       }
     </div>
-  );
+  )
   }
 }
 
@@ -50,4 +107,4 @@ function ShowBooks(){
   }
 }
 
-export default App;
+export default App
