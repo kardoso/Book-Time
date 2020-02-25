@@ -31,6 +31,7 @@ class BookForm extends Component {
       { value: 'not interested', label: 'Not interested' }
     ]
     var ratingOptions = [
+      { value: '-', label: '-' },
       { value: '1 star', label: '1 star' },
       { value: '2 stars', label: '2 stars' },
       { value: '3 stars', label: '3 stars' },
